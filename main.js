@@ -1,26 +1,29 @@
 const themeSwitch = document.getElementById('checkbox');
+const themeText = document.getElementById('theme-text');
 
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
+        themeText.textContent = '다크 모드';
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
+        themeText.textContent = '라이트 모드';
     }
 }
 
 themeSwitch.addEventListener('change', switchTheme, false);
 
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light';
 
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
+document.documentElement.setAttribute('data-theme', currentTheme);
 
-    if (currentTheme === 'dark') {
-        themeSwitch.checked = true;
-    }
+if (currentTheme === 'dark') {
+    themeSwitch.checked = true;
 }
+themeText.textContent = currentTheme === 'dark' ? '다크 모드' : '라이트 모드';
+
 
 class LottoNumbers extends HTMLElement {
     constructor() {

@@ -31,6 +31,11 @@ body {
     right: 15px;
 }
 
+#theme-text {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
 .theme-switch {
     display: inline-block;
     height: 34px;
