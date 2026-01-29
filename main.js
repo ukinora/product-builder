@@ -1,3 +1,27 @@
+const themeSwitch = document.getElementById('checkbox');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+themeSwitch.addEventListener('change', switchTheme, false);
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        themeSwitch.checked = true;
+    }
+}
+
 class LottoNumbers extends HTMLElement {
     constructor() {
         super();
@@ -18,7 +42,8 @@ class LottoNumbers extends HTMLElement {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
-                    background-color: #f0f0f0;
+                    background-color: var(--secondary-color, #f0f0f0);
+                    color: var(--font-color, #333);
                     margin: 0 10px;
                     display: flex;
                     justify-content: center;
