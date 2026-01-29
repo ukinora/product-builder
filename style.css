@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     display: flex;
+    flex-direction: column; /* Allow content to flow vertically */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -14,6 +15,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: background-color 0.3s;
+    margin-bottom: 20px; /* Add some space below the main container */
 }
 
 h1 {
@@ -44,4 +46,57 @@ h1 {
     padding: 0;
     max-height: 200px;
     overflow-y: auto;
+}
+
+/* Contact Form Styling */
+.contact-form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+}
+
+.contact-form-container h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form-container button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-container button[type="submit"]:hover {
+    background-color: #0056b3;
 }

@@ -4,6 +4,9 @@
     --font-color: #333;
     --bg-color: #f0f0f0;
     --container-bg-color: white;
+    --form-bg-color: white;
+    --form-input-border: #ccc;
+    --form-input-color: #333;
 }
 
 :root[data-theme="dark"] {
@@ -12,6 +15,9 @@
     --font-color: #f0f0f0;
     --bg-color: #333;
     --container-bg-color: #444;
+    --form-bg-color: #555;
+    --form-input-border: #666;
+    --form-input-color: #f0f0f0;
 }
 
 body {
@@ -21,6 +27,19 @@ body {
 
 .container {
     background-color: var(--container-bg-color);
+}
+
+/* Contact Form Theme Styling */
+.contact-form-container {
+    background-color: var(--form-bg-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    border: 1px solid var(--form-input-border);
+    color: var(--form-input-color);
+    background-color: var(--form-bg-color);
 }
 
 .theme-switch-wrapper {
